@@ -75,7 +75,7 @@ export default function About() {
                   
             <div className="form-check form-switch">
                 <input className="form-check-input"  type="checkbox" onClick={handleOnClick} id="flexSwitchCheckDefault"/>
-                <label className="form-check-label" for="flexSwitchCheckDefault">{tex}</label>
+                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{tex}</label>
             </div>
         </div>
         </div>
