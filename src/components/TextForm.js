@@ -31,16 +31,16 @@ export default function TextForm(props) {
         <div className="container"> 
             <h1>{props.heading}</h1>
             <div className="mb-3"> 
-            <textarea className="form-control" value={text} style={{backgroundColor:props.mode === 'light'?'white':'grey', color:props.mode === 'light'?'black':'white'}} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+            <textarea className="form-control" value={text} style={{backgroundColor:props.mode === 'light'?'white':'#818b95', color:props.mode === 'light'?'black':'white'}} onChange={handleOnChange} id="myBox" rows="8"></textarea>
             </div>
-            <button className="btn btn-outline-danger mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
-            <button className="btn btn-outline-danger" onClick={handleLowClick}>Convert to Lowercase</button>
+            <button disabled= {text.length===0} className="btn btn-outline-danger mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
+            <button disabled= {text.length===0} className="btn btn-outline-danger" onClick={handleLowClick}>Convert to Lowercase</button>
         </div>
 
         <div className="container my-3">
           <h1>Text Summary</h1>
-          <p>{text.split(" ").length-1} Words and {text.length} Characters</p>
-          <p>{0.008*(text.split(" ").length-1)} Minutes To Read</p>
+          <p>{text.split(" ").filter((element)=>{ return element.length!=0}).length} Words and {text.length} Characters</p>
+          <p>{0.008*(text.split(" ").filter((element)=>{ return element.length!=0}).length)} Minutes To Read</p>
         </div>
         </div>
         </>
